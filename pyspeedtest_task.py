@@ -1,6 +1,7 @@
 import speedtest
 import csv
 from datetime import datetime
+import filepath
 
 speedtester = speedtest.Speedtest()
 time = datetime.now().strftime("%b %d, %Y %H:%M")
@@ -12,6 +13,6 @@ print(time)
 print(f"Ping:\t\t{ping} ms")
 print(f"Download:\t{download} Mbps")
 print(f"Upload: \t{upload} Mbps")
-with open("/root/speedtest/speedtestresults.csv", "a+") as resultsfile:
+with open(filepath.resultsfile, "a+") as resultsfile:
     resultswriter = csv.writer(resultsfile)
     resultswriter.writerow([time,ping, download, upload])

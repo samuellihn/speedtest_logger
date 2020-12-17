@@ -1,6 +1,7 @@
 import csv
 import web
 from text_grapher import Grapher
+import filepath
 
 def construct_table():
 
@@ -9,7 +10,7 @@ def construct_table():
     result += "| Date and Time            | Ping        | Download      | Upload        |\n"
     result += "|------------------------------------------------------------------------|\n"
     
-    with open("/root/speedtest/speedtestresults.csv", "r") as resultsfile:
+    with open(filepath.resultsfile, "r") as resultsfile:
         resultsreader = csv.reader(resultsfile)
         for row in resultsreader:
             result += f"| {row[0].ljust(24)} | {row[1].rjust(8)} ms | {row[2].rjust(8)} Mb/s | {row[3].rjust(8)} Mb/s |\n"
@@ -21,7 +22,7 @@ def construct_table():
 def construct_graph(x_index, y_index, title = "", y_axis_label=""):
 
         data_array = []
-        with open("/root/speedtest/speedtestresults.csv", "r") as resultsfile:
+        with open(filepath.resultsfile, "r") as resultsfile:
             resultsreader = csv.reader(resultsfile)
             for row in resultsreader:
                 data_array.append(row)
