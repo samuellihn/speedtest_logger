@@ -2,6 +2,10 @@
 A python script that can be run as a cronjob to test internet speed and post it to a web.py server.
 ## Installation
 Clone this repository. Make sure to keep all the files in one folder.
+Modify the `resultsfile` varible in `filepath.py` to the absolute path of your desired results file
+```
+resultsfile = "/path/to/your/file.csv"A
+```
 All the dependencies are included in the folder except for web.py.
 Install the web.py python library using pip or your operating system's package manager
 ```
