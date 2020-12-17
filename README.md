@@ -1,6 +1,8 @@
 # Speedtest Logger
 A python script that can be run as a cronjob to test internet speed and post it to a web.py server.
 ## Installation
+Clone this repository. Make sure to keep all the files in one folder.
+All the dependencies are included in the folder except for web.py.
 Install the web.py python library using pip or your operating system's package manager
 ```
 python -m pip install web.py
@@ -10,7 +12,6 @@ or
 sudo apt-get install python-webpy
 ```
 etc.
-Other than that, all dependencies are included in the downloaded folder.
 
 ### Scheduling
 Create a shell script for `pyspeedtest_task.py` and set as a cronjob.
