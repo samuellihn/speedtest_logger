@@ -95,6 +95,7 @@ class Grapher:
             while label_index < len(x_labels):
                 label_line += x_labels[label_index].center(x_label_width)
                 label_index += index_increment
+            label_line = label_line.rstrip()
             if len(label_line)+1 < graph_width:
                 label_line += "|".rjust(graph_width-len(label_line))
 

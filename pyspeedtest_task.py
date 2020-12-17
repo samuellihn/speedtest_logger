@@ -12,6 +12,6 @@ print(time)
 print(f"Ping:\t\t{ping} ms")
 print(f"Download:\t{download} Mbps")
 print(f"Upload: \t{upload} Mbps")
-with open("speedtestresults.csv", "a+") as resultsfile:
+with open("/root/speedtest/speedtestresults.csv", "a+") as resultsfile:
     resultswriter = csv.writer(resultsfile)
     resultswriter.writerow([time,ping, download, upload])
